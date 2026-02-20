@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /backend/
+
+# API requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/(.*)$ api.php?request=$1 [L,QSA]
+
+# Deny direct access to config
+RewriteRule ^config\.php$ - [F,L]
