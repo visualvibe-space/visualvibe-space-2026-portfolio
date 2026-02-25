@@ -64,6 +64,9 @@ try {
         case 'admin':
             handleAdmin($method, $id);
             break;
+        case 'upload':
+            handleUpload();
+            break;
         case 'health':
             jsonResponse(['status' => 'ok', 'timestamp' => time()]);
             break;
@@ -666,4 +669,75 @@ function handleAdmin($method, $id) {
     }
     
     jsonResponse(['error' => 'Invalid request'], 400);
+}
+
+function handleUpload() {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        jsonResponse(['error' => 'Only POST method allowed'], 405);
+    }
+    
+    if (!isset($_FILES['file'])) {
+        jsonResponse(['error' => 'No file uploaded'], 400);
+    }
+    
+    $file = $_FILES['file'];
+    $type = $_POST['type'] ?? 'general';
+    
+    $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'video/mp4', 'video/webm'];
+    
+    if (!in_array($file['type'], $allowedTypes)) {
+        jsonResponse(['error' => 'File type not allowed'], 400);
+    }
+    
+    $uploadDir = __DIR__ . '/uploads/';
+    
+    switch ($type) {
+        case 'slides':
+            $uploadDir .= 'carousel/';
+            break;
+        case 'team':
+            $uploadDir .= 'team/';
+            break;
+        case 'websites':
+            $uploadDir .= 'websites/';
+            break;
+        case 'logos':
+            $uploadDir .= 'logos/';
+            break;
+        case 'graphics':
+            $uploadDir .= 'graphics/';
+            break;
+        case 'flyers':
+            $uploadDir .= 'flyers/';
+            break;
+        case 'uiux':
+            $uploadDir .= 'uiux/';
+            break;
+        case 'videos':
+            $uploadDir .= 'videos/';
+            break;
+        default:
+            $uploadDir .= 'general/';
+    }
+    
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+    
+    $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+    $filename = time() . '_' . uniqid() . '.' . $extension;
+    $targetPath = $uploadDir . $filename;
+    
+    if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+        $fullPath = str_replace(__DIR__ . '/', '', $targetPath);
+        
+        jsonResponse([
+            'message' => 'File uploaded successfully',
+            'path' => $fullPath,
+            'url' => $fullPath,
+            'filename' => $filename
+        ]);
+    } else {
+        jsonResponse(['error' => 'Failed to upload file'], 500);
+    }
 }

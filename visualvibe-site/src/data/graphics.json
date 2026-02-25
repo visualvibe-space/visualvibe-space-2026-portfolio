@@ -1,0 +1,85 @@
+{
+  "graphicDesigns": {
+    "2D": [
+      {
+        "id": 1,
+        "title": "Brand Identity Set",
+        "description": "Complete brand identity with logo, business cards, and letterhead",
+        "image_url": "https://placehold.co/600x600/252a38/ffffff?text=Brand+Identity",
+        "category": "Branding",
+        "design_type": "2D",
+        "display_order": 1,
+        "is_active": true
+      },
+      {
+        "id": 2,
+        "title": "Marketing Collateral",
+        "description": "Professional marketing materials for corporate clients",
+        "image_url": "https://placehold.co/600x600/252a38/ffffff?text=Marketing",
+        "category": "Print",
+        "design_type": "2D",
+        "display_order": 2,
+        "is_active": true
+      },
+      {
+        "id": 3,
+        "title": "Social Media Graphics",
+        "description": "Engaging social media posts and banners",
+        "image_url": "https://placehold.co/600x600/252a38/ffffff?text=Social+Media",
+        "category": "Digital",
+        "design_type": "2D",
+        "display_order": 3,
+        "is_active": true
+      }
+    ],
+    "3D": [
+      {
+        "id": 4,
+        "title": "Product Visualization",
+        "description": "Realistic 3D product renders for e-commerce",
+        "image_url": "https://placehold.co/600x600/252a38/ffffff?text=Product+3D",
+        "category": "Product",
+        "design_type": "3D",
+        "display_order": 1,
+        "is_active": true
+      },
+      {
+        "id": 5,
+        "title": "Architectural Render",
+        "description": "Photorealistic architectural visualizations",
+        "image_url": "https://placehold.co/600x600/252a38/ffffff?text=Architectural",
+        "category": "Architecture",
+        "design_type": "3D",
+        "display_order": 2,
+        "is_active": true
+      },
+      {
+        "id": 6,
+        "title": "3D Character Design",
+        "description": "Custom 3D characters for games and animations",
+        "image_url": "https://placehold.co/600x600/252a38/ffffff?text=Character",
+        "category": "Character",
+        "design_type": "3D",
+        "display_order": 3,
+        "is_active": true
+      }
+    ]
+  },
+  "services": {
+    "2D": {
+      "title": "2D Graphic Design",
+      "icon": "square",
+      "items": ["Vector Illustrations", "Digital Paintings", "Flat Design Graphics", "Infographic Design", "Character Design", "Icon Design", "Social Media Graphics", "Print Design"]
+    },
+    "3D": {
+      "title": "3D Graphic Design",
+      "icon": "cube",
+      "items": ["3D Modeling", "Product Visualization", "Architectural Rendering", "Character Modeling", "3D Animation", "Texturing & Lighting", "3D Product Design", "Virtual Reality Assets"]
+    }
+  },
+  "software": {
+    "2D": ["Adobe Illustrator", "Adobe Photoshop", "CorelDRAW", "Affinity Designer"],
+    "3D": ["Blender", "Autodesk Maya", "Cinema 4D", "3ds Max"],
+    "additional": ["Substance Painter", "ZBrush", "Adobe After Effects", "Figma"]
+  }
+}

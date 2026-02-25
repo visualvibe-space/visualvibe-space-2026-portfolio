@@ -1,0 +1,59 @@
+{
+  "uiuxDesigns": [
+    {
+      "id": 1,
+      "title": "Mobile Banking App",
+      "description": "Intuitive mobile banking interface with secure transactions",
+      "image_url": "https://placehold.co/600x400/252a38/ffffff?text=Mobile+Banking",
+      "thumbnail_url": "https://placehold.co/300x200/252a38/ffffff?text=Banking+Thumb",
+      "prototype_url": "https://figma.com",
+      "category": "Mobile App",
+      "design_type": "UI/UX",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "title": "E-Learning Platform",
+      "description": "Modern e-learning dashboard for students and instructors",
+      "image_url": "https://placehold.co/600x400/252a38/ffffff?text=E-Learning",
+      "thumbnail_url": "https://placehold.co/300x200/252a38/ffffff?text=Learning+Thumb",
+      "prototype_url": "https://figma.com",
+      "category": "Web App",
+      "design_type": "UI/UX",
+      "display_order": 2,
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "title": "Food Delivery App",
+      "description": "Seamless food ordering experience with real-time tracking",
+      "image_url": "https://placehold.co/600x400/252a38/ffffff?text=Food+Delivery",
+      "thumbnail_url": "https://placehold.co/300x200/252a38/ffffff?text=Food+Thumb",
+      "prototype_url": "https://figma.com",
+      "category": "Mobile App",
+      "design_type": "UI/UX",
+      "display_order": 3,
+      "is_active": true
+    }
+  ],
+  "services": {
+    "userInterface": {
+      "title": "User Interface Design",
+      "icon": "palette",
+      "items": ["Visual Design", "Typography & Color Theory", "Icon Design", "Layout Design", "Design Systems", "Component Libraries"]
+    },
+    "userExperience": {
+      "title": "User Experience Design",
+      "icon": "users",
+      "items": ["User Research", "Wireframing", "Prototyping", "Usability Testing", "User Flows", "Information Architecture"]
+    },
+    "prototyping": {
+      "title": "Interactive Prototyping",
+      "icon": "magic",
+      "items": ["Clickable Prototypes", "Micro-interactions", "Animation Design", "User Testing", "Feedback Integration", "Design Validation"]
+    }
+  },
+  "tools": ["Figma", "Adobe XD", "Sketch", "Adobe Creative Suite", "InVision", "Prototyping Tools"],
+  "deliverables": ["Style Guides", "Design Mockups", "Interactive Prototypes", "Asset Libraries", "Design Specifications", "Developer Handoff"]
+}

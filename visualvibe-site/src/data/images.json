@@ -1,0 +1,13 @@
+{
+  "placeholders": {
+    "team": "https://ui-avatars.com/api/?name={name}&background=random&color=fff&size=256",
+    "services": "https://placehold.co/600x400/e5e7eb/1f2937?text={title}",
+    "hero": "https://placehold.co/1920x1080/f3f4f6/1f2937?text=Hero+Background",
+    "about": "https://placehold.co/800x600/f3f4f6/1f2937?text=About+Image"
+  },
+  "apiEndpoints": {
+    "base": "/api/images",
+    "team": "/api/images/team",
+    "services": "/api/images/services"
+  }
+}

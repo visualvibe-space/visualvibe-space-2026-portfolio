@@ -1,0 +1,39 @@
+{
+  "websites": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A modern e-commerce solution with seamless shopping experience",
+      "image_url": "https://placehold.co/600x400/252a38/ffffff?text=E-Commerce",
+      "website_url": "https://example.com",
+      "category": "E-Commerce",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "title": "Corporate Website",
+      "description": "Professional corporate website for a leading business",
+      "image_url": "https://placehold.co/600x400/252a38/ffffff?text=Corporate",
+      "website_url": "https://example.com",
+      "category": "Corporate",
+      "display_order": 2,
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "title": "Portfolio Website",
+      "description": "Creative portfolio showcasing design work",
+      "image_url": "https://placehold.co/600x400/252a38/ffffff?text=Portfolio",
+      "website_url": "https://example.com",
+      "category": "Portfolio",
+      "display_order": 3,
+      "is_active": true
+    }
+  ],
+  "technology": {
+    "frontend": ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Bootstrap 4,5", "jQuery", "C#", "Responsive Design"],
+    "backend": ["Node.js", "PHP", "Python", "Express.js", "RESTful APIs", "C#", "Database Integration"],
+    "tools": ["Git & GitHub", "Netlify", "VS Code", "Figma", "Adobe Creative Suite", "Domain & Hosting"]
+  }
+}

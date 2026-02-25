@@ -1,0 +1,132 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "title": "Welcome to Visual Vibes",
+      "subtitle": "Your Idea, Our Vision",
+      "description": "We create stunning digital experiences",
+      "image_url": "https://placehold.co/1920x1080/252a38/ffffff?text=Slide+1",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "title": "Creative Solutions",
+      "subtitle": "For Your Business",
+      "description": "Professional design and development services",
+      "image_url": "https://placehold.co/1920x1080/252a38/ffffff?text=Slide+2",
+      "display_order": 2,
+      "is_active": true
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "designation": "CEO & Founder",
+      "image_url": "https://placehold.co/400x400/252a38/ffffff?text=John",
+      "category": "Leadership",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "designation": "Creative Director",
+      "image_url": "https://placehold.co/400x400/252a38/ffffff?text=Jane",
+      "category": "Design",
+      "display_order": 2,
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "designation": "Lead Developer",
+      "image_url": "https://placehold.co/400x400/252a38/ffffff?text=Mike",
+      "category": "Development",
+      "display_order": 3,
+      "is_active": true
+    }
+  ],
+  "enquiries": [
+    {
+      "id": 1,
+      "full_name": "Alice Brown",
+      "email": "alice@example.com",
+      "phone": "+1234567890",
+      "company": "ABC Corp",
+      "location": "New York, USA",
+      "service_type": "Website Development",
+      "project_description": "Need a corporate website",
+      "budget_range": "$1000-5000",
+      "status": "pending",
+      "created_at": "2024-01-15 10:30:00"
+    },
+    {
+      "id": 2,
+      "full_name": "Bob Wilson",
+      "email": "bob@example.com",
+      "phone": "+1234567891",
+      "company": "XYZ Inc",
+      "location": "London, UK",
+      "service_type": "UI/UX Design",
+      "project_description": "Mobile app design needed",
+      "budget_range": "$5000-10000",
+      "status": "reviewed",
+      "created_at": "2024-01-14 14:20:00"
+    },
+    {
+      "id": 3,
+      "full_name": "Carol Davis",
+      "email": "carol@example.com",
+      "phone": "+1234567892",
+      "company": "Tech Solutions",
+      "location": "San Francisco, USA",
+      "service_type": "Video Editing",
+      "project_description": "Marketing video production",
+      "budget_range": "$1000-5000",
+      "status": "contacted",
+      "created_at": "2024-01-13 09:15:00"
+    }
+  ],
+  "logos": [
+    {
+      "id": 1,
+      "title": "Tech Startup Logo",
+      "description": "Modern logo for a technology startup",
+      "image_url": "https://placehold.co/400x400/252a38/ffffff?text=Logo+1",
+      "category": "Technology",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "title": "Restaurant Brand",
+      "description": "Elegant logo for fine dining restaurant",
+      "image_url": "https://placehold.co/400x400/252a38/ffffff?text=Logo+2",
+      "category": "Food & Beverage",
+      "display_order": 2,
+      "is_active": true
+    }
+  ],
+  "flyers": [
+    {
+      "id": 1,
+      "title": "Event Promotion",
+      "description": "Eye-catching event flyer design",
+      "image_url": "https://placehold.co/600x800/252a38/ffffff?text=Flyer+1",
+      "category": "Events",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "title": "Product Launch",
+      "description": "Marketing flyer for new product",
+      "image_url": "https://placehold.co/600x800/252a38/ffffff?text=Flyer+2",
+      "category": "Marketing",
+      "display_order": 2,
+      "is_active": true
+    }
+  ]
+}

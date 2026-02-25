@@ -1,0 +1,60 @@
+{
+  "allServices": [
+    {
+      "id": 1,
+      "title": "Digital Marketing",
+      "description": "Strategic campaigns and compelling content designed to increase visibility, engagement, and conversions.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=Digital+Marketing",
+      "icon": "Globe"
+    },
+    {
+      "id": 2,
+      "title": "Website Development",
+      "description": "Custom, responsive websites built for performance, SEO, and exceptional user experiences.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=Website+Dev",
+      "icon": "Code"
+    },
+    {
+      "id": 3,
+      "title": "Video Editing & Motion Graphics",
+      "description": "Professional post-production and dynamic animations that bring your content to life with cinematic quality.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=Video+Editing",
+      "icon": "Film"
+    },
+    {
+      "id": 4,
+      "title": "UI/UX Design",
+      "description": "Intuitive interfaces and user journeys that enhance engagement and conversion rates.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=UI+UX+Design",
+      "icon": "Layout"
+    },
+    {
+      "id": 5,
+      "title": "Posters & Flyers Designing",
+      "description": "Attention-grabbing print materials that effectively communicate your message.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=Print+Design",
+      "icon": "Image"
+    },
+    {
+      "id": 6,
+      "title": "2D & 3D Graphic Design",
+      "description": "Stunning visual assets for all media, from print to digital to environmental displays.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=2D+3D+Design",
+      "icon": "Box"
+    },
+    {
+      "id": 7,
+      "title": "Android App Development",
+      "description": "Native Android applications designed for scalability, security, and seamless functionality.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=App+Development",
+      "icon": "Smartphone"
+    },
+    {
+      "id": 8,
+      "title": "Logo & Brand Design",
+      "description": "Strategic branding solutions that capture your essence and communicate your values visually.",
+      "image": "https://placehold.co/600x400/e5e7eb/1f2937?text=Logo+Design",
+      "icon": "Hexagon"
+    }
+  ]
+}

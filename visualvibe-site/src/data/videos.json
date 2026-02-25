@@ -1,0 +1,44 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "title": "Corporate Brand Video",
+      "description": "Professional corporate video showcasing company values and services",
+      "video_file": "/videos/sample1.mp4",
+      "thumbnail_file": "https://placehold.co/600x400/252a38/ffffff?text=Corporate+Video",
+      "display_order": 1,
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "title": "Product Launch Video",
+      "description": "Dynamic product launch video with motion graphics",
+      "video_file": "/videos/sample2.mp4",
+      "thumbnail_file": "https://placehold.co/600x400/252a38/ffffff?text=Product+Launch",
+      "display_order": 2,
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "title": "Social Media Ad",
+      "description": "Engaging social media advertisement with animations",
+      "video_file": "/videos/sample3.mp4",
+      "thumbnail_file": "https://placehold.co/600x400/252a38/ffffff?text=Social+Ad",
+      "display_order": 3,
+      "is_active": true
+    }
+  ],
+  "services": {
+    "editing": {
+      "title": "Video Editing Services",
+      "icon": "film",
+      "items": ["Corporate Videos", "Social Media Content", "YouTube Videos", "Commercial Ads", "Event Coverage", "Documentaries", "Color Correction", "Audio Enhancement"]
+    },
+    "motion": {
+      "title": "Motion Graphics Services",
+      "icon": "star",
+      "items": ["Explainer Videos", "Animated Infographics", "Title Sequences", "UI/UX Animations", "Character Animation", "Visual Effects", "3D Animation", "Particle Effects"]
+    }
+  },
+  "software": ["Adobe Premiere Pro", "Adobe After Effects", "Final Cut Pro", "DaVinci Resolve", "Adobe Photoshop", "Adobe Illustrator", "Cinema 4D", "Blender"]
+}

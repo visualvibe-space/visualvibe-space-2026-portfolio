@@ -1,0 +1,166 @@
+{
+  "departments": [
+    {
+      "id": "founders",
+      "name": "Founders & CEO",
+      "members": [
+        {
+          "id": 1,
+          "name": "Divyansh Nanavati",
+          "role": "CEO | Founder",
+          "image": "https://ui-avatars.com/api/?name=Divyansh+Nanavati&background=10b981&color=fff&size=256",
+          "initials": "DN"
+        },
+        {
+          "id": 2,
+          "name": "Bhavik Agarwal",
+          "role": "CO-FOUNDER",
+          "image": "https://ui-avatars.com/api/?name=Bhavik+Agarwal&background=10b981&color=fff&size=256",
+          "initials": "BA"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "name": "Head of Operations",
+      "members": [
+        {
+          "id": 3,
+          "name": "Khushbu Joshi",
+          "role": "Team Manager",
+          "image": "https://ui-avatars.com/api/?name=Khushbu+Joshi&background=10b981&color=fff&size=256",
+          "initials": "KJ"
+        }
+      ]
+    },
+    {
+      "id": "rnd",
+      "name": "Research and Development",
+      "members": [
+        {
+          "id": 4,
+          "name": "Shubham Chopra",
+          "role": "R&D Lead",
+          "image": "https://ui-avatars.com/api/?name=Shubham+Chopra&background=10b981&color=fff&size=256",
+          "initials": "SC"
+        },
+        {
+          "id": 5,
+          "name": "Archi Solanki",
+          "role": "R&D Associate",
+          "image": "https://ui-avatars.com/api/?name=Archi+Solanki&background=10b981&color=fff&size=256",
+          "initials": "AS"
+        },
+        {
+          "id": 6,
+          "name": "Harsh Jethwa",
+          "role": "R&D Associate",
+          "image": "https://ui-avatars.com/api/?name=Harsh+Jethwa&background=10b981&color=fff&size=256",
+          "initials": "HJ"
+        }
+      ]
+    },
+    {
+      "id": "developers",
+      "name": "Developers",
+      "members": [
+        {
+          "id": 7,
+          "name": "Vrushal Kalsariya",
+          "role": "Lead Full Stack Developer",
+          "image": "https://ui-avatars.com/api/?name=Vrushal+Kalsariya&background=10b981&color=fff&size=256",
+          "initials": "VK"
+        },
+        {
+          "id": 8,
+          "name": "Harsh Shah",
+          "role": "Senior Full Stack Developer",
+          "image": "https://ui-avatars.com/api/?name=Harsh+Shah&background=10b981&color=fff&size=256",
+          "initials": "HS"
+        },
+        {
+          "id": 9,
+          "name": "Shwet Sanghavi",
+          "role": "Senior Full Stack Developer",
+          "image": "https://ui-avatars.com/api/?name=Shwet+Sanghavi&background=10b981&color=fff&size=256",
+          "initials": "SS"
+        },
+        {
+          "id": 10,
+          "name": "Preet Chauhan",
+          "role": "Senior Full Stack Developer",
+          "image": "https://ui-avatars.com/api/?name=Preet+Chauhan&background=10b981&color=fff&size=256",
+          "initials": "PC"
+        },
+        {
+          "id": 11,
+          "name": "Pathvi Patel",
+          "role": "Junior Frontend Developer",
+          "image": "https://ui-avatars.com/api/?name=Pathvi+Patel&background=10b981&color=fff&size=256",
+          "initials": "PP"
+        },
+        {
+          "id": 12,
+          "name": "Shivam Rai",
+          "role": "Junior Frontend Developer",
+          "image": "https://ui-avatars.com/api/?name=Shivam+Rai&background=10b981&color=fff&size=256",
+          "initials": "SR"
+        }
+      ]
+    },
+    {
+      "id": "graphics",
+      "name": "Graphics Team",
+      "members": [
+        {
+          "id": 13,
+          "name": "Disha Golani",
+          "role": "Canva Designer",
+          "image": "https://ui-avatars.com/api/?name=Disha+Golani&background=10b981&color=fff&size=256",
+          "initials": "DG"
+        },
+        {
+          "id": 14,
+          "name": "Durgesh Sahani",
+          "role": "Designer Associate | UI/UX Designer",
+          "image": "https://ui-avatars.com/api/?name=Durgesh+Sahani&background=10b981&color=fff&size=256",
+          "initials": "DS"
+        },
+        {
+          "id": 15,
+          "name": "Jay",
+          "role": "Designer Associate | Video Editor",
+          "image": "https://ui-avatars.com/api/?name=Jay&background=10b981&color=fff&size=256",
+          "initials": "JY"
+        },
+        {
+          "id": 16,
+          "name": "Mohammed Wasim",
+          "role": "Designer Associate | Video Editor",
+          "image": "https://ui-avatars.com/api/?name=Mohammed+Wasim&background=10b981&color=fff&size=256",
+          "initials": "MW"
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing Team",
+      "members": [
+        {
+          "id": 17,
+          "name": "Nishtha Vyas",
+          "role": "Marketing Head",
+          "image": "https://ui-avatars.com/api/?name=Nishtha+Vyas&background=10b981&color=fff&size=256",
+          "initials": "NV"
+        },
+        {
+          "id": 18,
+          "name": "Dipali Divakar",
+          "role": "Sales Executive | Canva Designer",
+          "image": "https://ui-avatars.com/api/?name=Dipali+Divakar&background=10b981&color=fff&size=256",
+          "initials": "DD"
+        }
+      ]
+    }
+  ]
+}
