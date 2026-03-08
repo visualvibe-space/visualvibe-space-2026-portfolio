@@ -159,7 +159,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <motion.button
-              onClick={() => window.location.href = "/contact"}
+              onClick={() => (window.location.href = "/contact")}
               className="group flex items-center gap-2 px-8 py-4 bg-blue-800 text-white font-medium rounded-full hover:bg-blue-900"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -190,7 +190,7 @@ const Hero = () => {
           >
             {[
               { value: "100+", label: "Projects Completed" },
-              { value: "50+", label: "Happy Clients" },
+              { value: "100%", label: "Satisfaction Rate" },
               { value: "5+", label: "Years Experience" },
               { value: "20+", label: "Team Members" },
             ].map((stat, i) => (

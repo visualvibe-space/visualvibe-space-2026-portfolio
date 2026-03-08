@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { enquiriesApi } from "../../services/api";
 import {
   Send,
   CheckCircle,
@@ -45,29 +46,46 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const data = new FormData();
+      data.append('full_name', formData.fullName);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('company', formData.companyName);
+      data.append('service_type', formData.serviceType);
+      data.append('project_type', formData.projectType);
+      data.append('project_description', formData.description);
+      data.append('budget_range', formData.budgetRange);
+      data.append('contact_preference', formData.preferredContact);
+      data.append('best_time', formData.bestTime);
+      data.append('hear_about', formData.source);
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      await enquiriesApi.create(data);
 
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        companyName: "",
-        serviceType: "",
-        projectType: "",
-        description: "",
-        budgetRange: "",
-        preferredContact: "email",
-        bestTime: "",
-        source: "",
-      });
-    }, 3000);
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          companyName: "",
+          serviceType: "",
+          projectType: "",
+          description: "",
+          budgetRange: "",
+          preferredContact: "email",
+          bestTime: "",
+          source: "",
+        });
+      }, 3000);
+    } catch (error) {
+      console.error('Failed to submit enquiry:', error);
+      alert('Failed to submit enquiry. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClasses =
