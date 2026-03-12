@@ -37,7 +37,7 @@ const FounderCard = ({ member, index }) => {
             <img
               src={getImageUrl(member.image_url)}
               alt={member.name}
-              className="w-full h-[400px] lg:h-[500px] object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+              className="w-full h-[400px] lg:h-[500px] object-cover group-hover:brightness-110 scale-100 group-hover:scale-105 transition-all duration-700"
               loading="lazy"
               decoding="async"
               onError={(e) => {

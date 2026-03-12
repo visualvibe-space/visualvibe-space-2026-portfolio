@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import {
   Code,
   Database,
@@ -22,6 +22,8 @@ import {
   Boxes,
   Brush,
   Globe2Icon,
+  MapPin,
+  X,
 } from "lucide-react";
 import mapImage from "../../assets/map.png";
 import smileMemoji from "../../assets/vlogo.png";
@@ -57,6 +59,8 @@ const ToolBoxItems = ({ items, className, reverse = false }) => {
 };
 
 const ToolboxMapSection = () => {
+  const [isMapOpen, setIsMapOpen] = useState(false);
+
   const toolBoxItems = [
     { title: "JavaScript", icon: Code },
     { title: "React", icon: Layers },
@@ -137,21 +141,77 @@ const ToolboxMapSection = () => {
           </div>
 
           {/* Map Column */}
-          <div className="bg-[#111827] rounded-3xl overflow-hidden border border-white/10 relative h-[400px] md:h-auto">
+          <div
+            className="bg-[#111827] rounded-3xl overflow-hidden border border-white/10 relative h-[400px] md:h-auto cursor-pointer group"
+            onClick={() => setIsMapOpen(true)}
+          >
             <img
               src={mapImage}
               alt="Map"
-              className="w-full h-full object-cover object-left-top"
+              className="w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
               decoding="async"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full after:content-[''] after:absolute after:inset-0 after:rounded-full after:outline after-outline-2 after:-outline-offset-2 after:outline-gray-950/30">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
-              <img className="size-20" src={smileMemoji} alt="Memoji" loading="lazy" decoding="async" />
+              <div className="flex items-center justify-center h-full">
+                <img
+                  className="size-10"
+                  src={smileMemoji}
+                  alt="Memoji"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+              <MapPin className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-white">
+                123, Aagam Viviana, Vesu, Surat
+              </span>
             </div>
           </div>
         </div>
+
+        {/* Map Modal */}
+        {isMapOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div
+              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+              onClick={() => setIsMapOpen(false)}
+            />
+            <div className="relative bg-[#111827] rounded-2xl overflow-hidden border border-white/10 w-full max-w-3xl">
+              <button
+                onClick={() => setIsMapOpen(false)}
+                className="absolute top-3 right-3 z-10 p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
+              >
+                <X className="w-5 h-5 text-white" />
+              </button>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.689347367874!2d72.82309307595748!3d21.13698028053341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051530b2e3c1f%3A0x3b2d4f4e4f7a5b3c!2sAagam%20Viviana%2C%20Vesu%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location"
+              />
+              <div className="p-4 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-emerald-400" />
+                  <span className="text-white font-medium">
+                    Visual Vibes Office
+                  </span>
+                </div>
+                <p className="text-gray-400 text-sm mt-1">
+                  123, Aagam Viviana, Vesu, Surat
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

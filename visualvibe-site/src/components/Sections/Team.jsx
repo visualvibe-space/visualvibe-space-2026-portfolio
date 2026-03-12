@@ -246,7 +246,7 @@ const Team = () => {
                                   <img
                                     src={getImageUrl(member.image_url)}
                                     alt={member.name}
-                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                    className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-500"
                                     loading="lazy"
                                     decoding="async"
                                     onError={(e) => {

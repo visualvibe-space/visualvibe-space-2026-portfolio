@@ -243,16 +243,11 @@ const Footer = () => {
                   visualvibe.space@gmail.com
                 </a>
               </li>
-              <li className="flex items-center justify-center md:justify-start gap-3">
-                <Instagram className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                <a
-                  href="https://instagram.com/visualvibe.space"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
-                >
-                  @visualvibe.space
-                </a>
+              <li className="flex items-start justify-center md:justify-start gap-3">
+                <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-400">
+                  123, Aagam Viviana, Vesu, Surat
+                </span>
               </li>
             </ul>
           </div>
