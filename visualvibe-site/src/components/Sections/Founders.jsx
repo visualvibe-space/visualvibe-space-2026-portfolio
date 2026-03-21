@@ -99,6 +99,7 @@ const Founders = () => {
 
         if (data && typeof data === "object") {
           const possibleKeys = [
+            "Administration",
             "Founders & CEO",
             "Founders",
             "Leadership",
@@ -109,14 +110,24 @@ const Founders = () => {
 
           for (const key of possibleKeys) {
             if (data[key] && Array.isArray(data[key]) && data[key].length > 0) {
-              foundersList = data[key];
-              break;
+              const categoryFounders = data[key].filter((m) => {
+                const designation = m.designation?.toLowerCase() || "";
+                return designation.includes("founder") || designation.includes("ceo");
+              });
+              if (categoryFounders.length > 0) {
+                foundersList = categoryFounders;
+                break;
+              }
             }
           }
 
           if (foundersList.length === 0) {
             const allMembers = Object.values(data).flat();
-            foundersList = allMembers.slice(0, 4);
+            const founder = allMembers.find((m) => {
+              const designation = m.designation?.toLowerCase() || "";
+              return designation.includes("founder") || designation.includes("ceo");
+            });
+            foundersList = founder ? [founder] : [];
           }
         }
 
@@ -143,21 +154,16 @@ const Founders = () => {
               Meet Our Founders
             </h2>
           </div>
-          <div className="space-y-24">
-            {[1, 2].map((i) => (
-              <div
-                key={i}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
-              >
-                <div className="h-[400px] lg:h-[500px] bg-gray-800 animate-pulse rounded-3xl" />
-                <div className="space-y-4">
-                  <div className="h-8 bg-gray-800 rounded animate-pulse w-3/4" />
-                  <div className="h-5 bg-gray-800 rounded animate-pulse w-1/2" />
-                  <div className="h-4 bg-gray-800 rounded animate-pulse w-full" />
-                  <div className="h-4 bg-gray-800 rounded animate-pulse w-5/6" />
-                </div>
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-4xl">
+              <div className="h-[400px] lg:h-[500px] bg-gray-800 animate-pulse rounded-3xl" />
+              <div className="space-y-4">
+                <div className="h-8 bg-gray-800 rounded animate-pulse w-3/4" />
+                <div className="h-5 bg-gray-800 rounded animate-pulse w-1/2" />
+                <div className="h-4 bg-gray-800 rounded animate-pulse w-full" />
+                <div className="h-4 bg-gray-800 rounded animate-pulse w-5/6" />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -203,7 +209,7 @@ const Founders = () => {
         </motion.div>
 
         <div className="space-y-24">
-          {founders.slice(0, 4).map((member, index) => (
+          {founders.slice(0, 1).map((member, index) => (
             <FounderCard
               key={member.id || index}
               member={member}
@@ -212,23 +218,21 @@ const Founders = () => {
           ))}
         </div>
 
-        {founders.length > 4 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-center mt-16"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="text-center mt-16"
+        >
+          <Link
+            to="/team"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors"
           >
-            <Link
-              to="/team"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-colors"
-            >
-              <span>View Full Team</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
-        )}
+            <span>View Full Team</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

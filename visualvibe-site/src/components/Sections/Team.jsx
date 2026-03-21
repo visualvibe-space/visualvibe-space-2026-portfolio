@@ -6,25 +6,17 @@ import { ChevronDown, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Team = () => {
   const [expandedDepts, setExpandedDepts] = useState([
-    "Leadership",
-    "Design",
-    "Development",
+    "Administration",
   ]);
   const [teamData, setTeamData] = useState({});
   const [loading, setLoading] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
-    const fetchTeam = async () => {
+    const     fetchTeam = async () => {
       try {
         const data = await teamApi.getAll();
         setTeamData(data || {});
-        const firstDept = Object.keys(data || {}).find(
-          (key) => data[key]?.length > 0,
-        );
-        if (firstDept) {
-          setExpandedDepts([firstDept]);
-        }
       } catch (err) {
         console.error("Error fetching team:", err);
       } finally {
@@ -44,14 +36,20 @@ const Team = () => {
   };
 
   const departments = Object.entries(teamData)
-    .map(([name, members]) => ({
-      id: name,
-      name,
-      members: members || [],
-    }))
+    .map(([name, members]) => {
+      let displayName = name;
+      if (name.toLowerCase().includes("founders") || name.toLowerCase().includes("ceo")) {
+        displayName = "Administration";
+      }
+      return {
+        id: name,
+        name: displayName,
+        members: members || [],
+      };
+    })
     .filter((dept) => dept.members?.length > 0)
     .sort((a, b) => {
-      const priorityDepts = ["Founders & CEO", "Leadership", "Founders"];
+      const priorityDepts = ["Administration", "Leadership", "Founders"];
 
       const aPriority = priorityDepts.findIndex((d) =>
         a.name.toLowerCase().includes(d.toLowerCase()),
@@ -164,7 +162,7 @@ const Team = () => {
                 className="bg-[#0f172a] rounded-2xl overflow-hidden shadow-lg border border-gray-800"
               >
                 <motion.button
-                  onClick={() => toggleDept(dept.id)}
+                  onClick={() => toggleDept(dept.name)}
                   className="w-full flex items-center justify-between p-6 hover:bg-[#111827] transition-colors"
                   whileHover={{ backgroundColor: "rgba(0,0,0,0.02)" }}
                 >
@@ -185,7 +183,7 @@ const Team = () => {
                   </div>
                   <motion.div
                     animate={{
-                      rotate: expandedDepts.includes(dept.id) ? 180 : 0,
+                      rotate: expandedDepts.includes(dept.name) ? 180 : 0,
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -194,7 +192,7 @@ const Team = () => {
                 </motion.button>
 
                 <AnimatePresence>
-                  {expandedDepts.includes(dept.id) && (
+                  {expandedDepts.includes(dept.name) && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}

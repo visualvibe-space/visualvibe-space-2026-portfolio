@@ -168,7 +168,7 @@ const ToolboxMapSection = () => {
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
               <MapPin className="w-4 h-4 text-emerald-400" />
               <span className="text-sm text-white">
-                123, Aagam Viviana, Vesu, Surat
+                Visual Vibe, Vesu, Surat
               </span>
             </div>
           </div>
@@ -189,7 +189,7 @@ const ToolboxMapSection = () => {
                 <X className="w-5 h-5 text-white" />
               </button>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.689347367874!2d72.82309307595748!3d21.13698028053341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051530b2e3c1f%3A0x3b2d4f4e4f7a5b3c!2sAagam%20Viviana%2C%20Vesu%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8555937727456!2d72.7720285!3d21.1380719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f25e6c55fbd:0xd03191f8cee20e8d!2sVisual%20Vibe!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
@@ -202,11 +202,11 @@ const ToolboxMapSection = () => {
                 <div className="flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-emerald-400" />
                   <span className="text-white font-medium">
-                    Visual Vibes Office
+                    Visual Vibe Office
                   </span>
                 </div>
                 <p className="text-gray-400 text-sm mt-1">
-                  123, Aagam Viviana, Vesu, Surat
+                  Vesu, Surat, Gujarat
                 </p>
               </div>
             </div>
