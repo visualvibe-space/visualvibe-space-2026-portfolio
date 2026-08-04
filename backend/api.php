@@ -55,6 +55,9 @@ try {
         case 'videos':
             handleVideos($method, $id);
             break;
+        case 'partners':
+            handlePartners($method, $id);
+            break;
         case 'enquiries':
             handleEnquiries($method, $id);
             break;
@@ -488,6 +491,52 @@ function handleVideos($method, $id) {
     }
 }
 
+function handlePartners($method, $id) {
+    global $pdo;
+    
+    if ($method === 'GET') {
+        if ($id) {
+            $stmt = $pdo->prepare("SELECT * FROM partners WHERE id = ? AND is_active = 1");
+            $stmt->execute([$id]);
+            $item = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$item) {
+                jsonResponse(['error' => 'Partner not found'], 404);
+            }
+            jsonResponse($item);
+        } else {
+            $stmt = $pdo->query("SELECT * FROM partners WHERE is_active = 1 ORDER BY display_order ASC, created_at DESC");
+            jsonResponse($stmt->fetchAll(PDO::FETCH_ASSOC));
+        }
+    } elseif ($method === 'POST') {
+        $data = getJsonInput();
+        $stmt = $pdo->prepare("INSERT INTO partners (name, website_url, image_url, display_order, is_active) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([
+            $data['name'] ?? '',
+            $data['website_url'] ?? null,
+            $data['image_url'] ?? '',
+            $data['display_order'] ?? 0,
+            $data['is_active'] ?? 1
+        ]);
+        jsonResponse(['id' => $pdo->lastInsertId(), 'message' => 'Partner created']);
+    } elseif ($method === 'PUT' && $id) {
+        $data = getJsonInput();
+        $stmt = $pdo->prepare("UPDATE partners SET name = ?, website_url = ?, image_url = ?, display_order = ?, is_active = ? WHERE id = ?");
+        $stmt->execute([
+            $data['name'] ?? '',
+            $data['website_url'] ?? null,
+            $data['image_url'] ?? '',
+            $data['display_order'] ?? 0,
+            $data['is_active'] ?? 1,
+            $id
+        ]);
+        jsonResponse(['message' => 'Partner updated']);
+    } elseif ($method === 'DELETE' && $id) {
+        $stmt = $pdo->prepare("DELETE FROM partners WHERE id = ?");
+        $stmt->execute([$id]);
+        jsonResponse(['message' => 'Partner deleted']);
+    }
+}
+
 function handleEnquiries($method, $id) {
     global $pdo;
     
@@ -664,6 +713,9 @@ function handleAdmin($method, $id) {
             $stmt = $pdo->query("SELECT COUNT(*) as total FROM flyers_posters WHERE is_active = 1");
             $stats['flyers'] = $stmt->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
             
+            $stmt = $pdo->query("SELECT COUNT(*) as total FROM partners WHERE is_active = 1");
+            $stats['partners'] = $stmt->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
+            
             jsonResponse($stats);
         }
     }
@@ -712,6 +764,9 @@ function handleUpload() {
             break;
         case 'uiux':
             $uploadDir .= 'uiux/';
+            break;
+        case 'partners':
+            $uploadDir .= 'partners/';
             break;
         case 'videos':
             $uploadDir .= 'videos/';

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Navigation from "./components/Layout/Navigation";
 import Footer from "./components/Layout/Footer";
 const TapeSection = lazy(() => import("./components/UI/TapeSection"));
+const TrustedCompanies = lazy(() => import("./components/Sections/TrustedCompanies/TrustedCompanies"));
 
 const Hero = lazy(() => import("./components/Sections/Hero"));
 const About = lazy(() => import("./components/Sections/About"));
@@ -72,6 +73,7 @@ function HomePage() {
       <Suspense fallback={<PageSkeleton />}>
         <main>
           <Hero />
+          <TrustedCompanies />
           <TapeSection />
           <About />
           <Services />

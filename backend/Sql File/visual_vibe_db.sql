@@ -280,6 +280,34 @@ INSERT INTO `uiux_designs` (`id`, `title`, `description`, `category`, `design_ty
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `partners`
+--
+
+CREATE TABLE `partners` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `website_url` varchar(500) DEFAULT NULL,
+  `image_url` varchar(500) NOT NULL,
+  `display_order` int(11) DEFAULT 0,
+  `is_active` tinyint(1) DEFAULT 1,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for table `partners`
+--
+ALTER TABLE `partners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for table `partners`
+--
+ALTER TABLE `partners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `website_portfolio`
 --
 

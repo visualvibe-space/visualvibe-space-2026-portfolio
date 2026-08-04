@@ -5,6 +5,7 @@ import AdminDashboard from "./AdminDashboard";
 import AdminTeam from "./AdminTeam";
 import AdminEnquiries from "./AdminEnquiries";
 import AdminPortfolio from "./AdminPortfolio";
+import AdminPartners from "./AdminPartners";
 import { 
   authApi, 
   adminApi, 
@@ -15,7 +16,8 @@ import {
   graphicsApi, 
   uiuxApi, 
   videosApi, 
-  enquiriesApi 
+  enquiriesApi,
+  partnersApi
 } from "../../services/api";
 
 const AdminPanel = () => {
@@ -33,6 +35,7 @@ const AdminPanel = () => {
   const [uiux, setUiux] = useState([]);
   const [videos, setVideos] = useState([]);
   const [enquiries, setEnquiries] = useState([]);
+  const [partners, setPartners] = useState([]);
 
   const checkAuth = useCallback(async () => {
     try {
@@ -50,7 +53,7 @@ const AdminPanel = () => {
 
   const loadAllData = async () => {
     try {
-      const [statsData, teamData, websitesData, logosData, flyersData, graphicsData, uiuxData, videosData, enquiriesData] = await Promise.allSettled([
+      const [statsData, teamData, websitesData, logosData, flyersData, graphicsData, uiuxData, videosData, enquiriesData, partnersData] = await Promise.allSettled([
         adminApi.getStats().catch(() => null),
         teamApi.getAll().catch(() => []),
         websitesApi.getAll().catch(() => []),
@@ -60,6 +63,7 @@ const AdminPanel = () => {
         uiuxApi.getAll().catch(() => []),
         videosApi.getAll().catch(() => []),
         enquiriesApi.getAll().catch(() => []),
+        partnersApi.getAll().catch(() => []),
       ]);
 
       setDashboardStats(statsData.value);
@@ -101,6 +105,7 @@ const AdminPanel = () => {
       setUiux(uiuxData.value || []);
       setVideos(videosData.value || []);
       setEnquiries(enquiriesData.value || []);
+      setPartners(Array.isArray(partnersData.value) ? partnersData.value : []);
     } catch (error) {
       console.error('Error loading data:', error);
     }
@@ -136,6 +141,7 @@ const AdminPanel = () => {
     setUiux([]);
     setVideos([]);
     setEnquiries([]);
+    setPartners([]);
     navigate("/");
   };
 
@@ -199,6 +205,8 @@ const AdminPanel = () => {
         />;
       case "enquiries":
         return <AdminEnquiries initialData={enquiries} onRefresh={refreshData} />;
+      case "partners":
+        return <AdminPartners initialData={partners} onRefresh={refreshData} />;
       default:
         return <AdminDashboard stats={dashboardStats} enquiries={enquiries} />;
     }

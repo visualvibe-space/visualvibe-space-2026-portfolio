@@ -11,7 +11,8 @@ import {
   ChevronRight,
   Menu,
   X,
-  Video
+  Video,
+  Handshake
 } from "lucide-react";
 
 const AdminLayout = ({ children, activeSection, setActiveSection, onLogout }) => {
@@ -27,6 +28,7 @@ const AdminLayout = ({ children, activeSection, setActiveSection, onLogout }) =>
     { id: "graphics", label: "Graphic Designs", icon: Image },
     { id: "uiux", label: "UI/UX Designs", icon: Folder },
     { id: "videos", label: "Portfolio Videos", icon: Video },
+    { id: "partners", label: "Partners & Clients", icon: Handshake },
     { id: "enquiries", label: "Enquiries", icon: MessageSquare },
   ];
 

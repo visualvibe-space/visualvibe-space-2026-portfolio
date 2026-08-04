@@ -128,6 +128,14 @@ export const uiuxApi = {
   delete: (id) => api.delete(`/uiux/${id}`),
 };
 
+export const partnersApi = {
+  getAll: () => api.get('/partners'),
+  getById: (id) => api.get(`/partners/${id}`),
+  create: (data) => api.post('/partners', data),
+  update: (id, data) => api.put(`/partners/${id}`, data),
+  delete: (id) => api.delete(`/partners/${id}`),
+};
+
 export const videosApi = {
   getAll: () => api.get('/videos'),
   getById: (id) => api.get(`/videos/${id}`),
